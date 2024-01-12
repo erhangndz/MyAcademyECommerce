@@ -31,9 +31,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Payment", "Payment", "{67E2
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PhotoStock", "PhotoStock", "{EF6D0CAB-CD26-4BDB-8230-54B50DF7F6A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyAcademyECommerce.Services.Catalog", "Services\Catalog\MyAcademyECommerce.Services.Catalog\MyAcademyECommerce.Services.Catalog.csproj", "{B4CF5379-3C2F-4281-9E75-94042A2ADF85}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyAcademyECommerce.Services.Catalog", "Services\Catalog\MyAcademyECommerce.Services.Catalog\MyAcademyECommerce.Services.Catalog.csproj", "{B4CF5379-3C2F-4281-9E75-94042A2ADF85}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyAcademyECommerce.Shared", "Shared\MyAcademyECommerce.Shared\MyAcademyECommerce.Shared.csproj", "{113D31F3-A0EE-4A62-A6E0-5277829B02C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyAcademyECommerce.Shared", "Shared\MyAcademyECommerce.Shared\MyAcademyECommerce.Shared.csproj", "{113D31F3-A0EE-4A62-A6E0-5277829B02C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyAcademyECommerce.Discount", "Services\Discount\MyAcademyECommerce.Discount\MyAcademyECommerce.Discount.csproj", "{B31890FE-15E8-48AA-8A4E-1BE7E1B05E1D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +51,10 @@ Global
 		{113D31F3-A0EE-4A62-A6E0-5277829B02C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{113D31F3-A0EE-4A62-A6E0-5277829B02C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{113D31F3-A0EE-4A62-A6E0-5277829B02C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B31890FE-15E8-48AA-8A4E-1BE7E1B05E1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B31890FE-15E8-48AA-8A4E-1BE7E1B05E1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B31890FE-15E8-48AA-8A4E-1BE7E1B05E1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B31890FE-15E8-48AA-8A4E-1BE7E1B05E1D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -64,6 +70,7 @@ Global
 		{EF6D0CAB-CD26-4BDB-8230-54B50DF7F6A9} = {693018A7-BF9D-4354-B9E3-8F3E5A122BD4}
 		{B4CF5379-3C2F-4281-9E75-94042A2ADF85} = {2D12BB2A-8938-4B4E-B353-EA20B74E9F59}
 		{113D31F3-A0EE-4A62-A6E0-5277829B02C9} = {7FA6CFB7-1C26-454E-8873-B004539D26A6}
+		{B31890FE-15E8-48AA-8A4E-1BE7E1B05E1D} = {1894CD28-12B0-47E6-8EF2-0A707BEF5EDD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {224FBD48-240F-46A0-8CE8-EA3F4A3F4413}
