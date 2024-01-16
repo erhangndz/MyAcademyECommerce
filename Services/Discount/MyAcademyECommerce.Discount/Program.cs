@@ -1,8 +1,10 @@
 using Microsoft.EntityFrameworkCore;
 using MyAcademyECommerce.Discount.Context;
+using MyAcademyECommerce.Discount.Services;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
+
 
 // Add services to the container.
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());    
@@ -10,6 +12,7 @@ builder.Services.AddDbContext<DiscountContext>(opt =>
 {
     opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+builder.Services.AddScoped<IDiscountService, DiscountService>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
