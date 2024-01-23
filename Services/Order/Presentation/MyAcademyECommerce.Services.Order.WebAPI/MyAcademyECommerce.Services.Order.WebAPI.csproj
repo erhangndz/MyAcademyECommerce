@@ -9,6 +9,10 @@
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="12.0.1" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.26">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
@@ -18,6 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Core\MyAcademyECommerce.Services.Order.Application\MyAcademyECommerce.Services.Order.Application.csproj" />
+    <ProjectReference Include="..\..\Core\MyAcademyECommerce.Services.Order.Domain\MyAcademyECommerce.Services.Order.Domain.csproj" />
     <ProjectReference Include="..\..\Infrastructure\MyAcademyECommerce.Services.Order.Persistance\MyAcademyECommerce.Services.Order.Persistance.csproj" />
   </ItemGroup>
 

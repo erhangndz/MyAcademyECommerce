@@ -7,14 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Mediator\Commands\" />
-    <Folder Include="Features\Mediator\Handlers\" />
-    <Folder Include="Features\Mediator\Results\" />
-    <Folder Include="Features\Mediator\Queries\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="MediatR" Version="12.2.0" />
   </ItemGroup>
 
   <ItemGroup>

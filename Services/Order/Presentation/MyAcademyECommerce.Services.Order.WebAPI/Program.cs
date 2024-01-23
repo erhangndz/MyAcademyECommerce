@@ -1,11 +1,13 @@
 using Microsoft.EntityFrameworkCore;
+using MyAcademyECommerce.Services.Order.Application.Interfaces;
 using MyAcademyECommerce.Services.Order.Persistance.Context;
+using MyAcademyECommerce.Services.Order.Persistance.Repositories;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+builder.Services.AddScoped(typeof(IRepository<>),typeof(GenericRepository<>));
 builder.Services.AddDbContext<OrderContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));

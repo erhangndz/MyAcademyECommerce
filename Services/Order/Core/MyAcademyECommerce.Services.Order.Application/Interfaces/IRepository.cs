@@ -14,6 +14,6 @@ namespace MyAcademyECommerce.Services.Order.Application.Interfaces
         Task CreateAsync(T entity);
         Task UpdateAsync(T entity);
         Task DeleteAsync(int id);
-        Task<List<T>> GetFilteredList(Expression<Func<T, bool>> filter);
+        Task<T> GetOrderByFilter(Expression<Func<T, bool>> filter);
     }
 }
