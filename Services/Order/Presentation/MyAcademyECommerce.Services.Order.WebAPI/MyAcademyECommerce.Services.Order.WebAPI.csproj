@@ -17,10 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\Core\MyAcademyECommerce.Services.Order.Application\MyAcademyECommerce.Services.Order.Application.csproj" />
     <ProjectReference Include="..\..\Core\MyAcademyECommerce.Services.Order.Domain\MyAcademyECommerce.Services.Order.Domain.csproj" />
     <ProjectReference Include="..\..\Infrastructure\MyAcademyECommerce.Services.Order.Persistance\MyAcademyECommerce.Services.Order.Persistance.csproj" />

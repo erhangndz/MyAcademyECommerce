@@ -43,13 +43,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{0592EE0D-3957-4AC3-B8CF-57ACB0FEC464}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyAcademyECommerce.Services.Order.Domain", "Services\Order\Core\MyAcademyECommerce.Services.Order.Domain\MyAcademyECommerce.Services.Order.Domain.csproj", "{D93059DB-00DA-4D0D-8533-994794837229}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyAcademyECommerce.Services.Order.Domain", "Services\Order\Core\MyAcademyECommerce.Services.Order.Domain\MyAcademyECommerce.Services.Order.Domain.csproj", "{D93059DB-00DA-4D0D-8533-994794837229}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyAcademyECommerce.Services.Order.Application", "Services\Order\Core\MyAcademyECommerce.Services.Order.Application\MyAcademyECommerce.Services.Order.Application.csproj", "{0F12E0CE-1879-4D90-AAE6-2CBC1622EF52}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyAcademyECommerce.Services.Order.Application", "Services\Order\Core\MyAcademyECommerce.Services.Order.Application\MyAcademyECommerce.Services.Order.Application.csproj", "{0F12E0CE-1879-4D90-AAE6-2CBC1622EF52}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyAcademyECommerce.Services.Order.Persistance", "Services\Order\Infrastructure\MyAcademyECommerce.Services.Order.Persistance\MyAcademyECommerce.Services.Order.Persistance.csproj", "{CF869415-10DE-4F88-8242-4BB1FE9B59D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyAcademyECommerce.Services.Order.Persistance", "Services\Order\Infrastructure\MyAcademyECommerce.Services.Order.Persistance\MyAcademyECommerce.Services.Order.Persistance.csproj", "{CF869415-10DE-4F88-8242-4BB1FE9B59D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyAcademyECommerce.Services.Order.WebAPI", "Services\Order\Presentation\MyAcademyECommerce.Services.Order.WebAPI\MyAcademyECommerce.Services.Order.WebAPI.csproj", "{79AA1B66-CEC1-4A6D-B457-CC5EBA5C3C9A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyAcademyECommerce.Services.Order.WebAPI", "Services\Order\Presentation\MyAcademyECommerce.Services.Order.WebAPI\MyAcademyECommerce.Services.Order.WebAPI.csproj", "{79AA1B66-CEC1-4A6D-B457-CC5EBA5C3C9A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyAcademyECommerce.IdentityServer", "IdentityServer\MyAcademyECommerce.IdentityServer\MyAcademyECommerce.IdentityServer.csproj", "{670C20E2-61FD-42CE-BE38-94A82E33A513}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -85,6 +87,10 @@ Global
 		{79AA1B66-CEC1-4A6D-B457-CC5EBA5C3C9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79AA1B66-CEC1-4A6D-B457-CC5EBA5C3C9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79AA1B66-CEC1-4A6D-B457-CC5EBA5C3C9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{670C20E2-61FD-42CE-BE38-94A82E33A513}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{670C20E2-61FD-42CE-BE38-94A82E33A513}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{670C20E2-61FD-42CE-BE38-94A82E33A513}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{670C20E2-61FD-42CE-BE38-94A82E33A513}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -108,6 +114,7 @@ Global
 		{0F12E0CE-1879-4D90-AAE6-2CBC1622EF52} = {655B510B-27B4-4511-8A54-2D8BC307368F}
 		{CF869415-10DE-4F88-8242-4BB1FE9B59D7} = {C594CA75-1585-4F54-B087-6F2F6F2E86BD}
 		{79AA1B66-CEC1-4A6D-B457-CC5EBA5C3C9A} = {0592EE0D-3957-4AC3-B8CF-57ACB0FEC464}
+		{670C20E2-61FD-42CE-BE38-94A82E33A513} = {B8C3981D-7627-4FF8-AE65-8264CE798399}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {224FBD48-240F-46A0-8CE8-EA3F4A3F4413}
