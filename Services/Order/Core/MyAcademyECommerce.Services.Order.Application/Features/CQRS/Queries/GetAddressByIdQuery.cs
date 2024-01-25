@@ -8,11 +8,11 @@ namespace MyAcademyECommerce.Services.Order.Application.Features.CQRS.Queries
 {
     public class GetAddressByIdQuery
     {
-        public int Id { get; set; }
+        public int AddressId { get; set; }
 
         public GetAddressByIdQuery(int id)
         {
-            Id = id;
+            AddressId = id;
         }
     }
 }

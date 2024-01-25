@@ -11,21 +11,20 @@ using System.Threading.Tasks;
 
 namespace MyAcademyECommerce.Services.Order.Application.Features.Mediator.Handlers
 {
-    public class RemoveOrderingCommandHandler : IRequestHandler<RemoveOrderingCommand>
+    public class RemoveOrderDetailCommandHandler : IRequestHandler<RemoveOrderDetailCommand>
     {
-        private readonly IRepository<Ordering> _orderingRepository;
+        private readonly IRepository<OrderDetail> _repository;
         private readonly IMapper _mapper;
 
-        public RemoveOrderingCommandHandler(IRepository<Ordering> orderingRepository, IMapper mapper)
+        public RemoveOrderDetailCommandHandler(IRepository<OrderDetail> repository, IMapper mapper)
         {
-            _orderingRepository = orderingRepository;
+            _repository = repository;
             _mapper = mapper;
         }
 
-        public async Task Handle(RemoveOrderingCommand request, CancellationToken cancellationToken)
+        public async Task Handle(RemoveOrderDetailCommand request, CancellationToken cancellationToken)
         {
-           
-            await _orderingRepository.DeleteAsync(request.OrderingId);
+            await _repository.DeleteAsync(request.OrderDetailId);
         }
     }
 }

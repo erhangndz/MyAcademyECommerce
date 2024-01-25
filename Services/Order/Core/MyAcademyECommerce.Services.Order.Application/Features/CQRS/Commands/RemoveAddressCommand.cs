@@ -8,11 +8,11 @@ namespace MyAcademyECommerce.Services.Order.Application.Features.CQRS.Commands
 {
     public class RemoveAddressCommand
     {
-        public int Id { get; set; }
+        public int AddressId { get; set; }
 
         public RemoveAddressCommand(int id)
         {
-            Id = id;
+            AddressId = id;
         }
     }
 }

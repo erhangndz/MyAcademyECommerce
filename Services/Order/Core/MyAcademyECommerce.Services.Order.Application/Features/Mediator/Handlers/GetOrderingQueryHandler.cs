@@ -26,7 +26,7 @@ namespace MyAcademyECommerce.Services.Order.Application.Features.Mediator.Handle
 
         public  async Task<List<GetOrderingQueryResult>> Handle(GetOrderingQuery request, CancellationToken cancellationToken)
         {
-            var values = _repository.GetAllAsync();
+            var values = await _repository.GetAllAsync();
             return _mapper.Map<List<GetOrderingQueryResult>>(values);
         }
     }

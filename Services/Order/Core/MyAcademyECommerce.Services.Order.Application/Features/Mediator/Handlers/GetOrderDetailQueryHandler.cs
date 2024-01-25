@@ -12,22 +12,22 @@ using System.Threading.Tasks;
 
 namespace MyAcademyECommerce.Services.Order.Application.Features.Mediator.Handlers
 {
-    public class GetOrderingByIdQueryHandler : IRequestHandler<GetOrderingByIdQuery, GetOrderingByIdQueryResult>
+    public class GetOrderDetailQueryHandler : IRequestHandler<GetOrderDetailQuery, List<GetOrderDetailQueryResult>>
     {
-        private readonly IRepository<Ordering> _repository;
+
+        private readonly IRepository<OrderDetail> _orderDetailRepository;
         private readonly IMapper _mapper;
 
-        public GetOrderingByIdQueryHandler(IRepository<Ordering> repository, IMapper mapper)
+        public GetOrderDetailQueryHandler(IRepository<OrderDetail> orderDetailRepository, IMapper mapper)
         {
-            _repository = repository;
+            _orderDetailRepository = orderDetailRepository;
             _mapper = mapper;
         }
 
-        public async Task<GetOrderingByIdQueryResult> Handle(GetOrderingByIdQuery request, CancellationToken cancellationToken)
+        public async Task<List<GetOrderDetailQueryResult>> Handle(GetOrderDetailQuery request, CancellationToken cancellationToken)
         {
-           
-          var value = await _repository.GetByIdAsync(request.OrderingId);
-           return _mapper.Map<GetOrderingByIdQueryResult>(value);
+            var values = await _orderDetailRepository.GetAllAsync();
+            return _mapper.Map<List<GetOrderDetailQueryResult>>(values);
         }
     }
 }
