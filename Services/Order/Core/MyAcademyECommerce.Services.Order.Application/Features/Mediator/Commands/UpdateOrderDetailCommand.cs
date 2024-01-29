@@ -17,7 +17,8 @@ namespace MyAcademyECommerce.Services.Order.Application.Features.Mediator.Comman
         public int Amount { get; set; }
         public decimal TotalPrice { get; set; }
         public int OrderingId { get; set; }
-
         public Ordering Ordering { get; set; }
+
+
     }
 }
