@@ -4,6 +4,7 @@
 
 using IdentityServer4;
 using IdentityServer4.Models;
+using System;
 using System.Collections.Generic;
 
 namespace MyAcademyECommerce.IdentityServer
@@ -20,22 +21,57 @@ namespace MyAcademyECommerce.IdentityServer
             new ApiResource("ResourceOrderFull"){Scopes={"OrderFullPermission" } },
             new ApiResource(IdentityServerConstants.LocalApi.ScopeName)
         };
-
-
         public static IEnumerable<IdentityResource> IdentityResources => new IdentityResource[]
         {
             new IdentityResources.OpenId(),
             new IdentityResources.Email(),
             new IdentityResources.Profile()
         };
-
         public static IEnumerable<ApiScope> ApiScopes => new ApiScope[]
         {
             new ApiScope("CatalogFullPermission","Full Authority for Catalog Operations"),
-            new ApiScope("CatalogReadPermission","Catalog Read Authority for Catalog Read Operations")
+            new ApiScope("CatalogReadPermission","Catalog Read Authority for Catalog Operations"),
+            new ApiScope("DiscountReadPermission","Discount Read Authority for Discount Operations"),
+            new ApiScope("DiscountCreatePermission","Discount Create Authority for Discount Operations"),
+            new ApiScope("DiscountFullPermission","Full Authority for Discount Operations"),
+            new ApiScope("OrderEditPermission","Order Edit Authority for Order Operations"),
+            new ApiScope("OrderFullPermission","Order Full Authority for Order Operations"),
+            new ApiScope(IdentityServerConstants.LocalApi.ScopeName)
 
+        };
 
+        public static IEnumerable<Client> Clients => new Client[]
+        {
+            //Visitor Client
+            new Client
+            {
+                ClientId="ECommerceVisitorId",
+                ClientName="ECommerce Visitor User",
+                AllowedGrantTypes=GrantTypes.ClientCredentials,
+                ClientSecrets={new Secret("ecommercesecret".Sha256())},
+                AllowedScopes={ "CatalogReadPermission" }
+            },
 
+            //Manager Client
+            new Client
+            {
+                ClientId="ECommerceManagerId",
+                ClientName="ECommerce Manager User",
+                AllowedGrantTypes=GrantTypes.ClientCredentials,
+                ClientSecrets={new Secret("ecommercesecret".Sha256())},
+                AllowedScopes={ "CatalogFullPermission" }
+            },
+
+            //Admin Client
+            new Client
+            {
+                ClientId="ECommerceAdminId",
+                ClientName="ECommerce Admin User",
+                AllowedGrantTypes=GrantTypes.ClientCredentials,
+                ClientSecrets={new Secret("ecommercesecret".Sha256())},
+                AllowedScopes={ "CatalogFullPermission", "DiscountFullPermission", "OrderFullPermission",IdentityServerConstants.LocalApi.ScopeName },
+                AccessTokenLifetime=600
+            }
 
         };
 
