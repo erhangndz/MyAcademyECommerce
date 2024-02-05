@@ -53,6 +53,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyAcademyECommerce.Services
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyAcademyECommerce.IdentityServer", "IdentityServer\MyAcademyECommerce.IdentityServer\MyAcademyECommerce.IdentityServer.csproj", "{670C20E2-61FD-42CE-BE38-94A82E33A513}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyAcademyECommerce.Services.Basket", "Services\Basket\MyAcademyECommerce.Services.Basket\MyAcademyECommerce.Services.Basket.csproj", "{29CBE62B-B25F-4567-9B27-62912D5CE400}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -91,6 +93,10 @@ Global
 		{670C20E2-61FD-42CE-BE38-94A82E33A513}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{670C20E2-61FD-42CE-BE38-94A82E33A513}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{670C20E2-61FD-42CE-BE38-94A82E33A513}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29CBE62B-B25F-4567-9B27-62912D5CE400}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29CBE62B-B25F-4567-9B27-62912D5CE400}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29CBE62B-B25F-4567-9B27-62912D5CE400}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29CBE62B-B25F-4567-9B27-62912D5CE400}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -115,6 +121,7 @@ Global
 		{CF869415-10DE-4F88-8242-4BB1FE9B59D7} = {C594CA75-1585-4F54-B087-6F2F6F2E86BD}
 		{79AA1B66-CEC1-4A6D-B457-CC5EBA5C3C9A} = {0592EE0D-3957-4AC3-B8CF-57ACB0FEC464}
 		{670C20E2-61FD-42CE-BE38-94A82E33A513} = {B8C3981D-7627-4FF8-AE65-8264CE798399}
+		{29CBE62B-B25F-4567-9B27-62912D5CE400} = {B2ABA2D2-FA65-4CB1-AFDE-9F1C951DF6AE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {224FBD48-240F-46A0-8CE8-EA3F4A3F4413}

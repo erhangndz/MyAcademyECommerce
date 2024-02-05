@@ -1,29 +1,35 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Options;
-using MyAcademyECommerce.Services.Catalog.Services.CategoryServices;
-using MyAcademyECommerce.Services.Catalog.Services.ProductServices;
-using MyAcademyECommerce.Services.Catalog.Settings;
-using System.Reflection;
+using MyAcademyECommerce.Services.Basket.LoginServices;
+using MyAcademyECommerce.Services.Basket.Services;
+using MyAcademyECommerce.Services.Basket.Settings;
+using System.IdentityModel.Tokens.Jwt;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
+JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Remove("sub");
 // Add services to the container.
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opt =>
 {
     opt.Authority = builder.Configuration["IdentityServerUrl"];
-    opt.Audience = "ResourceCatalog";
-    
+    opt.Audience = "ResourceBasket";
+
 });
+builder.Services.AddScoped<ILoginService, LoginService>();
+builder.Services.AddHttpContextAccessor();
+builder.Services.Configure<RedisSettings>(builder.Configuration.GetSection("RedisSettings"));
 
-
-builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
-builder.Services.Configure<DatabaseSettings>(builder.Configuration.GetSection("DatabaseSettings"));
-builder.Services.AddSingleton<IDatabaseSettings>(sp =>
+builder.Services.AddSingleton<RedisService>(sp =>
 {
-    return sp.GetRequiredService<IOptions<DatabaseSettings>>().Value;
+    var redisSettings = sp.GetRequiredService<IOptions<RedisSettings>>().Value;
+
+    var redis = new RedisService(redisSettings.Host, redisSettings.Port);
+
+    redis.Connect();
+
+    return redis;
 });
-builder.Services.AddScoped<ICategoryService, CategoryService>();
-builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -39,7 +45,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseAuthentication();    
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

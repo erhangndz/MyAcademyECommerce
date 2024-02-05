@@ -1,0 +1,17 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Name": "IdentityServer\\MyAcademyECommerce.IdentityServer\\MyAcademyECommerce.IdentityServer.csproj",
+        "Action": "Start",
+        "DebugTarget": "SelfHost"
+      },
+      {
+        "Name": "Services\\Basket\\MyAcademyECommerce.Services.Basket\\MyAcademyECommerce.Services.Basket.csproj",
+        "Action": "Start",
+        "DebugTarget": "MyAcademyECommerce.Services.Basket"
+      }
+    ]
+  }
+]
