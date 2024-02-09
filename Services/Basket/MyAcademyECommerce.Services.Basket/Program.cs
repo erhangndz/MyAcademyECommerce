@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.Extensions.Options;
 using MyAcademyECommerce.Services.Basket.LoginServices;
 using MyAcademyECommerce.Services.Basket.Services;
@@ -7,7 +9,7 @@ using System.IdentityModel.Tokens.Jwt;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
+var requireAuthorizePolicy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
 JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Remove("sub");
 // Add services to the container.
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opt =>
@@ -17,6 +19,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
 
 });
 builder.Services.AddScoped<ILoginService, LoginService>();
+builder.Services.AddScoped<IBasketService, BasketService>();
 builder.Services.AddHttpContextAccessor();
 builder.Services.Configure<RedisSettings>(builder.Configuration.GetSection("RedisSettings"));
 
@@ -30,7 +33,11 @@ builder.Services.AddSingleton<RedisService>(sp =>
 
     return redis;
 });
-builder.Services.AddControllers();
+builder.Services.AddControllers(opt =>
+{
+
+    opt.Filters.Add(new AuthorizeFilter(requireAuthorizePolicy));
+});
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
